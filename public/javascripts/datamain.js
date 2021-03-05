@@ -1,11 +1,8 @@
 
-// Requires common.js and loads our module which will run luxon
+// require([]) is a top-level async callback version of require()
 
-// baseUrl == "../node_modules"
+// require() is only for use inside a define()
 
-requirejs(
-    ["./common"],
-    (common) => {
-        requirejs(["requirejs/test"]);
-    }
-);
+requirejs(["./common"], () => {
+    require(["a/printCurrentDate"]);
+});
